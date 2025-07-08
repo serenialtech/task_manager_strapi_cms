@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "closed_tasks",
+  "info": {
+    "singularName": "closed-task",
+    "pluralName": "closed-tasks",
+    "displayName": "closed-task"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "budget": {
+      "type": "integer"
+    },
+    "deadline": {
+      "type": "date"
+    },
+    "timeSpent": {
+      "type": "integer"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "closed_tasks"
+    }
+  }
+}
